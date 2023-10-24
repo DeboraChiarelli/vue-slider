@@ -56,6 +56,23 @@ createApp({
             }
         ]
         }
+    },
+    methods : {
+        nextImage(){
+            this.activeImage++;
+            if (this.activeImage === this.images.length){
+                this.activeImage = 0;
+            }   
+        },
+        prevImage(){
+            this.activeImage--;
+            if (this.activeImage < 0) {
+                this.activeImage = this.image.length -1;
+            }
+        },
+            changeImage(index){
+                this.activeImage = index;
+            }
     }
 })
 
