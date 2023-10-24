@@ -46,10 +46,17 @@ createApp({
                 this.activeImage = this.images.length -1;
             }
         },
-            changeImage(thumbIndex) {
-                this.activeImage = thumbIndex;
-            }
-    }
+        changeImage(thumbIndex) {
+            this.activeImage = thumbIndex;
+        }
+    },
+    mounted: function () {
+        let time = this;
+        setInterval(function () {
+            time.nextImage();
+        }, 3000);
+    },
 }).mount('#app');
+
 
 
